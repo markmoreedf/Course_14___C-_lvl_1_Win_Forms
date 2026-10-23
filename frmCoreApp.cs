@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Course_14___C__lvl_1_Win_Forms
 {
-    public partial class Form1 : Form
+    public partial class frmCoreApp : Form
     {
-        public Form1()
+        public frmCoreApp()
         {
             InitializeComponent();
             this.Text = "DATATATATATA";
@@ -55,6 +55,7 @@ namespace Course_14___C__lvl_1_Win_Forms
             textBox1.Text = textBox1.Enabled ? "" : "Disabled";
             btn_DisableTB1.Text = textBox1.Enabled ? "Disable TB1" : "Enable TB1";
             label1.Visible = textBox1.Enabled;
+            btn_ChngTB1Clr.Enabled = textBox1.Enabled;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -63,6 +64,7 @@ namespace Course_14___C__lvl_1_Win_Forms
             textBox2.Text = textBox2.Enabled ? "" : "Disabled";
             btn_DisableTB2.Text = textBox2.Enabled ? "Disable TB2" : "Enable TB2";
             label2.Visible = textBox2.Enabled;
+            btn_ChngTB2Clr.Enabled = textBox2.Enabled;
         }
 
         private void btn_ResetTB1_Click(object sender, EventArgs e)
@@ -118,7 +120,52 @@ namespace Course_14___C__lvl_1_Win_Forms
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            if (!textBox2.Enabled) { return; }
             progressBar1.Value = textBox2.Text.Length > 100 ? 100 : (textBox2.Text.Length * 100 / textBox2.MaxLength);
+        }
+
+        private bool isGoingBack = false;
+        private void btn_OpenStartWindow_Click(object sender, EventArgs e)
+        {
+            isGoingBack = true; // Set the flag to true
+            this.Close();       // Close this form
+        }
+
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            base.OnFormClosed(e);
+
+            if (isGoingBack)
+            {
+                // Do nothing here! The Main Form will catch the closure and show itself.
+            }
+            else
+            {
+                // The user clicked the "X" button or closed it another way.
+                // Kill the entire program cleanly so it doesn't get stuck in Visual Studio.
+                Application.Exit();
+            }
+        }
+        
+
+
+        private void btn_OpenTempForm_Click(object sender, EventArgs e)
+        {
+            frmCalculator tempForm = new frmCalculator();
+            tempForm.Show();
+        }
+
+        private void btn_messageBox1_Click(object sender, EventArgs e)
+        {
+            Form msgBoxForm = new frm_messageBox();
+            msgBoxForm.ShowDialog();
+        }
+
+        private void btn_OpenOtherControlsFom_Click(object sender, EventArgs e)
+        {
+            Form otherControlsForm = new frmOtherControls();
+            otherControlsForm.ShowDialog();
         }
     }
 }

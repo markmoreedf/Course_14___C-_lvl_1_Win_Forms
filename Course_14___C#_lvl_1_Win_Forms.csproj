@@ -46,16 +46,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmOtherControls.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmOtherControls.Designer.cs">
+      <DependentUpon>frmOtherControls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_messageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_messageBox.Designer.cs">
+      <DependentUpon>frm_messageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCoreApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCoreApp.Designer.cs">
+      <DependentUpon>frmCoreApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalculator.Designer.cs">
+      <DependentUpon>frmCalculator.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmOtherControls.resx">
+      <DependentUpon>frmOtherControls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_messageBox.resx">
+      <DependentUpon>frm_messageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCoreApp.resx">
+      <DependentUpon>frmCoreApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +99,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmCalculator.resx">
+      <DependentUpon>frmCalculator.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
