@@ -164,7 +164,7 @@ namespace Course_14___C__lvl_1_Win_Forms
 
         private void btn_OpenOtherControlsFom_Click(object sender, EventArgs e)
         {
-            Form otherControlsForm = new frmOtherControls();
+            Form otherControlsForm = new frmPizzaShop();
             otherControlsForm.ShowDialog();
         }
     }

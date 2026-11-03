@@ -380,7 +380,7 @@
             this.btn_OpenOtherControlsFom.Name = "btn_OpenOtherControlsFom";
             this.btn_OpenOtherControlsFom.Size = new System.Drawing.Size(122, 28);
             this.btn_OpenOtherControlsFom.TabIndex = 18;
-            this.btn_OpenOtherControlsFom.Text = "Other Controls";
+            this.btn_OpenOtherControlsFom.Text = "Pizzazoo";
             this.btn_OpenOtherControlsFom.UseVisualStyleBackColor = true;
             this.btn_OpenOtherControlsFom.Click += new System.EventHandler(this.btn_OpenOtherControlsFom_Click);
             // 
