@@ -57,6 +57,36 @@ namespace Course_14___C__lvl_1_Win_Forms
             lblPriceNumber.Text = _CalculateTotalPrice().ToString("0.0 $");
         }
 
+        private void _UpdateSummary()
+        {
+            lblSummaryCrust.Text = "Crust: ";
+            lblSummarySize.Text = "Size: ";
+            lblSummaryToppings.Text = "Toppings: ";
+            if (rbThin.Checked)
+                lblSummaryCrust.Text += "Thin";
+            if (rbThick.Checked)
+                lblSummaryCrust.Text += "Thick";
+            if (rbSmall.Checked)
+                lblSummarySize.Text += "Small";
+            if (rbMedium.Checked)
+                lblSummarySize.Text += "Medium";
+            if (rbLarge.Checked)
+                lblSummarySize.Text += "Large";
+            if (chkExtraCheese.Checked)
+                lblSummaryToppings.Text += "Extra Cheese, ";
+            if (chkTomatoes.Checked)
+                lblSummaryToppings.Text += "Tomatoes, ";
+            if (chkMushroom.Checked)
+                lblSummaryToppings.Text += "Mushroom, ";
+            if (chkPeppers.Checked)
+                lblSummaryToppings.Text += "Peppers, ";
+            if (chkOlives.Checked)
+                lblSummaryToppings.Text += "Olives, ";
+            if (lblSummaryToppings.Text.EndsWith(", "))
+                lblSummaryToppings.Text = lblSummaryToppings.Text.Substring(0, lblSummaryToppings.Text.Length - 2);
+
+        }
+
         private void btnResetOrder_Click(object sender, EventArgs e)
         {
             gbxCrust.Enabled = true;
@@ -81,105 +111,45 @@ namespace Course_14___C__lvl_1_Win_Forms
 
         private void rbThin_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbThin.Checked)
-            {
-                lblSummaryCrust.Text += "Thin";
-                _UpdatePrice();
-            }
-            else
-            {
-                _UpdatePrice();
-                lblSummaryCrust.Text = lblSummaryCrust.Text.Replace("Thin", "");
-            }
+            _UpdatePrice();
+            _UpdateSummary();
         }
 
-        private void rbThick_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbThick.Checked)
-            {
-                _UpdatePrice();
-                lblSummaryCrust.Text += "Thick";
-            }
-            else
-            {
-                _UpdatePrice();
-                lblSummaryCrust.Text = lblSummaryCrust.Text.Replace("Thick", "");
-            }
-        }
+        //private void rbThick_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    _UpdatePrice();
+        //    _UpdateSummary();
+        //}
 
         private void chkExtraCheese_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkExtraCheese.Checked)
-            {
-                _UpdatePrice();
-                lblSummaryToppings.Text += "Extra Cheese, ";
-            }
-            else
-            {
-                _UpdatePrice();
-                lblSummaryToppings.Text = lblSummaryToppings.Text.Replace("Extra Cheese, ", "");
-            }
+            _UpdatePrice();
+            _UpdateSummary();
+
         }
 
         private void chkTomatoes_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkTomatoes.Checked)
-            {
-                _UpdatePrice();
-                lblSummaryToppings.Text += "Tomatoes, ";
-
-            }
-            else
-            {
-                _UpdatePrice();
-                lblSummaryToppings.Text = lblSummaryToppings.Text.Replace("Tomatoes, ", "");
-
-            }
+            _UpdatePrice();
+            _UpdateSummary();
         }
 
         private void chkMushroom_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkMushroom.Checked)
-            {
-                _UpdatePrice();
-                lblSummaryToppings.Text += "Mushroom, ";
-            }
-            else
-            {
-                _UpdatePrice();
-                _UpdatePrice();
-                lblSummaryToppings.Text = lblSummaryToppings.Text.Replace("Mushroom, ", "");
-            }
+            _UpdatePrice();
+            _UpdateSummary();
         }
 
         private void chkOlives_CheckedChanged(object sender, EventArgs e)
         {
-           if (chkOlives.Checked)
-            {
-                _UpdatePrice();
-                lblSummaryToppings.Text += "Olives, ";
-            }
-            else
-            {
-                _UpdatePrice();
-                _UpdatePrice();
-                lblSummaryToppings.Text = lblSummaryToppings.Text.Replace("Olives, ", "");
-            }
+            _UpdatePrice();
+            _UpdateSummary();
         }
 
         private void chkPeppers_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkPeppers.Checked)
-            {
-                _UpdatePrice();
-                lblSummaryToppings.Text += "Peppers, ";
-            }
-            else
-            {
-                _UpdatePrice();
-                _UpdatePrice();
-                lblSummaryToppings.Text = lblSummaryToppings.Text.Replace("Peppers, ", "");
-            }
+            _UpdatePrice();
+            _UpdateSummary();
         }
 
         private void rbTakeOut_CheckedChanged(object sender, EventArgs e)
@@ -187,57 +157,36 @@ namespace Course_14___C__lvl_1_Win_Forms
             _UpdatePrice();
         }
 
-        private void rbSmall_CheckedChanged(object sender, EventArgs e)
+        private void rbSmall_CheckedChanged(object sender, EventArgs e) 
         {
-            if (rbSmall.Checked)
-            {
-                _UpdatePrice();
-                lblSummarySize.Text  += "Small";
-            }
-            else 
-            {
-                _UpdatePrice();
-                lblSummarySize.Text = lblSummarySize.Text.Replace("Small", "");
-            }
+            _UpdatePrice();
+            _UpdateSummary();
         }
 
         private void rdMedium_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbMedium.Checked)
-            {
-                _UpdatePrice();
-                lblSummarySize.Text  += "Medium";
-            }
-            else
-            {
-                _UpdatePrice();
-                lblSummarySize.Text = lblSummarySize.Text.Replace("Medium", "");
-            }
+            _UpdatePrice();
+            _UpdateSummary();
+ 
         }
 
         private void rbLarge_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbLarge.Checked)
-            {
-                _UpdatePrice();
-                lblSummarySize.Text  += "Large";
-            }
-            else
-            {
-                _UpdatePrice();
-                lblSummarySize.Text = lblSummarySize.Text.Replace("Large", "");
-            }
+            _UpdatePrice();
+            _UpdateSummary();
         }
 
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
             if (!rbThick.Checked && !rbThin.Checked)
             {
-                MessageBox.Show("Please Choose Your Prefered Crust", "Crust Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please Choose Your Preferred Crust", "Crust Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
             if (!rbSmall.Checked && !rbMedium.Checked && !rbLarge.Checked)
             {
                 MessageBox.Show("Please Choose Your Pizza Size", "Size Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
             if (MessageBox.Show("Your order has been placed successfully!", "Order Placed", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
@@ -246,7 +195,6 @@ namespace Course_14___C__lvl_1_Win_Forms
                 gbxToppings.Enabled = false;
                 gbxWhereToEat.Enabled = false;
                 btnPlaceOrder.Enabled = false;
-
             }
         }
     }

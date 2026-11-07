@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmOtherControls.cs">
+    <Compile Include="rmPizzazzo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOtherControls.Designer.cs">
-      <DependentUpon>frmOtherControls.cs</DependentUpon>
+    <Compile Include="rmPizzazzo.Designer.cs">
+      <DependentUpon>rmPizzazzo.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_messageBox.cs">
       <SubType>Form</SubType>
@@ -78,8 +78,8 @@
     <Compile Include="frmCalculator.Designer.cs">
       <DependentUpon>frmCalculator.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmOtherControls.resx">
-      <DependentUpon>frmOtherControls.cs</DependentUpon>
+    <EmbeddedResource Include="rmPizzazzo.resx">
+      <DependentUpon>rmPizzazzo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_messageBox.resx">
       <DependentUpon>frm_messageBox.cs</DependentUpon>
